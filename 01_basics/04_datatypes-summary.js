@@ -42,8 +42,12 @@ const myFunction = function(){
 myFunction()
 
 
-console.log(typeof bigNumber);
-console.log(typeof outsideTemprature);
-console.log(typeof score);
-console.log(typeof myFunction);
-console.log(typeof myObject);
+console.log(typeof bigNumber);     //bigint=>bigint(return-type)
+console.log(typeof outsideTemprature);  //null =>object
+console.log(typeof score);              //number =>number
+console.log(typeof myFunction);         //function => function
+console.log(typeof myObject);           //object => object
+//string => string
+//undefined=> undefined
+//symbol=>symbol
+
