@@ -51,3 +51,35 @@ console.log(typeof myObject);           //object => object
 //undefined=> undefined
 //symbol=>symbol
 
+
+
+
+
+
+
+
+//*********************************** Memory******************************************
+
+//Stack() => used in Primitive(var ka copy milta hai)
+//Heap() => used in Non-Primitive(reference milta h og value ka )
+
+//Primitive
+let myYoutubeName = "satvik"
+
+let anotherName = myYoutubeName;
+anotherName = "satviksundriyal"
+console.log(anotherName);     //satviksundriyal
+console.log(myYoutubeName);   //satvik
+
+
+//Non-Primitive
+let userOne ={
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo= userOne    //SAME REFERENCE
+
+userTwo.email = "abc@google.com";
+console.log(userOne.email);  //dono mai change hoga
+console.log(userTwo.email);   //because of direct referecne
