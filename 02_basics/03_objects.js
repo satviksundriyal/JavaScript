@@ -29,12 +29,12 @@ const jsUser = {
 //now how to acess object values
 
 // console.log(jsUser.email);   //can use by this but not highly recommended
-console.log(jsUser["email"]); 
-console.log(jsUser["full name"]);  //can acess all types
+// console.log(jsUser["email"]); 
+// console.log(jsUser["full name"]);  //can acess all types
 
 // console.log(jsUser.mySymbol);   //it is treating it as string not by symbol so
 
-console.log(jsUser[mySymbol]);  //now this syntax is fine and will treat as symbol so use [] this
+// console.log(jsUser[mySymbol]);  //now this syntax is fine and will treat as symbol so use [] this
 //Symbol ko kainse access kre?
 
 
@@ -43,26 +43,68 @@ console.log(jsUser[mySymbol]);  //now this syntax is fine and will treat as symb
 //++++++++++++++++++change value of object
 
 jsUser.email = "satvik27@gmail.com"
-console.log(jsUser["email"]); 
+// console.log(jsUser["email"]); 
 
 
 //lock the value
 
 //Object.freeze(jsUser)
 jsUser.email = "freezed@gmail.com"
-console.log(jsUser["email"]);  //now no change will apply email will remain same
-console.log(jsUser);   //it also define symbol
+// console.log(jsUser["email"]);  //now no change will apply email will remain same
+// console.log(jsUser);   //it also define symbol
 
 
 //functions
 
 jsUser.greeting = function(){
-    console.log("Hi js user");
+    // console.log("Hi js user");
 }  
 
 jsUser.greetingTwo = function(){
-    console.log(`Hi js user, ${this.name}`);   //by 'this' we can use object property
+    // console.log(`Hi js user, ${this.name}`);   //by 'this' we can use object property
 }
 
-console.log(jsUser.greeting()); 
-console.log(jsUser.greetingTwo()); 
+// console.log(jsUser.greeting()); 
+// console.log(jsUser.greetingTwo());  
+
+
+
+
+//Object Last+++++++++++++++++
+
+const course = {
+    courseName: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+//course.courseInstructor
+
+const {courseInstructor: cinst} = course  //another way to aceess(object destruct)
+console.log(cinst);
+
+
+// const navbar = ({company}) /*props.company baar baar nahi likhte to destructor use krte*/ ==> {
+
+// }
+//  navbar(company = "hitesh")
+
+
+
+
+
+//JSON(structure)
+
+// {
+//     name: "satvik",     //keys bhi string and value bhi string
+//     courseName: "JS in Hindi",
+//     price: "free"
+// }
+
+
+//can be in another form like array
+
+[
+{},
+{},
+{},
+]
