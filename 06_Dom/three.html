@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodes</title>
+</head>
+<body style="background-color: black; color: aliceblue ;">
+</body>
+<script>
+const div1 = document.createElement('div') //created div can even create h1,h2...
+console.log(div1);
+
+div1.className ="main"
+
+// div.id="myID"
+
+div1.id = Math.round(Math.random()*10+1) //for fun
+
+div1.setAttribute("title","generated title")//can add title by this way(more prefer because . wala overwrite krta hai)
+
+div1.style.backgroundColor="green";
+div1.style.padding="12px";
+div1.innerText="Creating node"   //ye h . wala
+
+// //or we can use this way
+// const addText = document.createTextNode("chai or code")
+// div.appendChild(addText)
+
+
+//to display page because we created div but it is in memory
+
+
+document.body.appendChild(div1)
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
