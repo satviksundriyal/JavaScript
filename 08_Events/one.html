@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+
+// document.getElementById('owl').onclick = function(){
+//     alert("owl clicked") //use alert  rather than onclick
+}
+
+// //another approach-: attachEvent()
+// //jQqery-> .onEventListner
+// //main point in event listner
+// //type, timestamp, defaultPrevented, target, toElement, srcElement, currentTarget
+// //for interview=> clientX, clientY, screenX, screenY,position related 
+// //alt key, ctrlkey, shift key, keyCode
+
+// // document.getElementById('owl').addEventListener('click', function(){
+// // alert("owl clicked!!")  //best approach
+// // })
+
+// //event object
+// document.getElementById('owl').addEventListener('click', function(e){  //e is event obj
+
+// },false)  //false is default
+
+// //event propogation => false has two concept=> event bubbling and event capturing
+// //how event prop works?
+
+// document.getElementById('images').addEventListener('click', function(e){
+// console.log("clicked inside ul");
+// })// ye tb print hoga jb hum images k anadr click krenge
+
+// document.getElementById('owl').addEventListener('click', function(e){
+// console.log("owl clicked");
+// })//ye tb jb owl pr click, pr ul k anadr bhi click hoga kyoki owl ul mai hai so who first?
+// //first owl clicked
+// //then ul. it is called bubbling from outside to inside default false hoti hai!
+// //second is capturing mode= if true occur then 1st ul will be clicked and then owl
+// //capturing top to bottom
+
+// //agar aap nahi chate ki 2 me se koi ek propogate na ho to waha kaam ata hai e object
+// document.getElementById('owl').addEventListener('click', function(e){
+// console.log("owl clicked");
+// e.stopPropagation(); // then it will click only owl
+// })
+
+// document.getElementById('owl').addEventListener('google', function(e){
+// console.log("owl clicked");
+// e.stopPropagation(); 
+// e.preventDefault();
+// },false)  //now humne google wali list li hai prevent default se wo click to hoga pr redirect nahi krega to google
+
+
+//small project- on clicking images the images should vanished
+
+document.querySelector('#images').addEventListener('click', (e)=>{
+// console.log(e)  //by .target we can identigy where the event is coming from
+console.log(e.target.parentNode)      //by .target.parentNode(kyoki hame poora li remove krna h)
+let removeIt = e.target.parentNode
+if(e.target.tagName === 'IMG'){
+console.log(e.target.id);//just for cheking in console
+removeIt.remove()// first approach
+removeIt.parentNode.removeChild(removeIt) //second approch
+},false)        
+
+
+
+
+
+
+</script>
+</html>
